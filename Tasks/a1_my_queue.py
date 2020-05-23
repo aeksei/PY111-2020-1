@@ -51,6 +51,6 @@ def clear() -> None:
     """
     global deque_list
 
-    deque_list = []
+    deque_list.clear()
 
     return None
