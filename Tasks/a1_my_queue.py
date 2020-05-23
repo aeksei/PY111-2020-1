@@ -39,8 +39,7 @@ def peek(ind: int = 0) -> Any:
     :param ind: index of element (count from the beginning)
     :return: peeked element
     """
-    print(ind)
-    return None
+    return deque_list[ind] if ind < len(deque_list) else None
 
 
 def clear() -> None:
