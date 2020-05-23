@@ -30,11 +30,6 @@ def pop() -> Any:
     """
     global stack_list
 
-    # if stack_list:
-    #     return stack_list.pop()
-    # else:
-    #     return None
-
     return stack_list.pop() if stack_list else None
 
 
