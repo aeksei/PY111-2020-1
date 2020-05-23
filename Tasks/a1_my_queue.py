@@ -4,6 +4,9 @@ My little Queue
 from typing import Any
 
 
+deque_list = []  # очередь начало слева, конец справа
+
+
 def enqueue(elem: Any) -> None:
     """
     Operation that add element to the end of the queue
