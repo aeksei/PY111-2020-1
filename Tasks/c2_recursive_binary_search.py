@@ -9,5 +9,30 @@ def binary_search(elem: int, arr: Sequence) -> Optional[int]:
     :param arr: array where element is to be found
     :return: Index of element if it's presented in the arr, None otherwise
     """
-    print(elem, arr)
-    return None
+    def split_binary(left_border, right_border):
+        middle = left_border + (right_border - left_border) // 2
+
+        if arr[middle] == elem:
+            if arr[middle - 1] != elem:
+                return middle
+
+        if left_border == right_border:
+            return None
+
+        if elem > arr[middle]:
+            left_border = middle + 1
+        else:
+            right_border = middle - 1
+
+        return split_binary(left_border, right_border)
+
+    if elem < arr[0]:
+        return None
+
+    if elem > arr[-1]:
+        return None
+
+    left = 0  # левая граница
+    right = len(arr) - 1  # правая граница
+
+    return split_binary(left, right)
